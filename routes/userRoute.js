@@ -53,9 +53,9 @@ const upload = multer({ storage: storage });
 userRoute.get("/", isLogoutAuth, (req, res) => {
   res.render("register", { message: "" });
 });
-userRoute.get("/user/register", isLogoutAuth, userGetRegisterController);
+userRoute.get("/register", isLogoutAuth, userGetRegisterController);
 
-userRoute.post("/user/register", upload.single("image"), userPostRegisterController);
+userRoute.post("/register", upload.single("image"), userPostRegisterController);
 
 userRoute.get("/verify", userVerifyMailController);
 
