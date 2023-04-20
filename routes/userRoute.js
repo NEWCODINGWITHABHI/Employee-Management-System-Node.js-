@@ -50,33 +50,90 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-userRoute.get("/", isLogoutAuth, (req, res) => {
-  res.render("register", { message: "" });
-});
-userRoute.get("/register", isLogoutAuth, userGetRegisterController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/",
+  isLogoutAuth,
+  (req, res) => {
+    res.render("register", { message: "" });
+  }
+);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/register",
+  isLogoutAuth,
+  userGetRegisterController
+);
 
-userRoute.post("/register", upload.single("image"), userPostRegisterController);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/register",
+  upload.single("image"),
+  userPostRegisterController
+);
 
-userRoute.get("/verify", userVerifyMailController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/verify",
+  userVerifyMailController
+);
 
-userRoute.get("/login", isLogoutAuth, userGetLoginController);
-userRoute.post("/login", userPostLoginController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/login",
+  isLogoutAuth,
+  userGetLoginController
+);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/login",
+  userPostLoginController
+);
 
-userRoute.get("/home", isLoginAuth, userGetHomeController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/home",
+  isLoginAuth,
+  userGetHomeController
+);
 
-userRoute.get("/logout", isLoginAuth, userLogoutController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/logout",
+  isLoginAuth,
+  userLogoutController
+);
 
-userRoute.get("/forget", isLogoutAuth, userGetForgetController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/forget",
+  isLogoutAuth,
+  userGetForgetController
+);
 
-userRoute.post("/forget", userPostForgetController);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/forget",
+  userPostForgetController
+);
 
-userRoute.get("/reset-password", isLogoutAuth, userResetPasswordGetController);
-userRoute.post("/reset-password", userResetPasswordPostController);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/reset-password",
+  isLogoutAuth,
+  userResetPasswordGetController
+);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/reset-password",
+  userResetPasswordPostController
+);
 
-userRoute.get("/verification", userGetVerification);
-userRoute.post("/verification", userPostVerification);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/verification",
+  userGetVerification
+);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/verification",
+  userPostVerification
+);
 
-userRoute.get("/edit",isLoginAuth,userEditGetController)
-userRoute.post("/edit",userUpdatePostConroller);
+userRoute.get(
+  "https://employee-management-system-n26m.onrender.com/edit",
+  isLoginAuth,
+  userEditGetController
+);
+userRoute.post(
+  "https://employee-management-system-n26m.onrender.com/edit",
+  userUpdatePostConroller
+);
 
 module.exports = userRoute;
