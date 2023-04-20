@@ -17,7 +17,7 @@ async function addNewUserMail(name, email,password, id) {
       from: email,
       to: email,
       subject: "For Verification mail",
-      html: `<p>hii ${name}</p>,please click here to <a href="http://localhost:5000/verify?id=${id}"> Verify</a> Your mail. <b>Email:${email}<b/>  <b>Email:${password}<b/></p>`,
+      html: `<p>hii ${name}</p>,please click here to <a href="https://employee-management-system-n26m.onrender.com/verify?id=${id}"> Verify</a> Your mail. <b>Email:${email}<b/>  <b>Email:${password}<b/></p>`,
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {

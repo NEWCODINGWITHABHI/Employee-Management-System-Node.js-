@@ -18,7 +18,7 @@ async function sendResetPasswordAdmin(name, email, token) {
       from: email,
       to: email,
       subject: "For Verification mail",
-      html: `<p>hii ${name}</p>,please click here to <a href="http://localhost:5000/admin/forget-password?token=${token}"> Reset Password</a> Your mail</p>`,
+      html: `<p>hii ${name}</p>,please click here to <a href="https://employee-management-system-n26m.onrender.com/admin/forget-password?token=${token}"> Reset Password</a> Your mail</p>`,
     };
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
