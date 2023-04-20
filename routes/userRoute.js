@@ -50,13 +50,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-userRoute.get(
-  "https://employee-management-system-n26m.onrender.com/",
-  isLogoutAuth,
-  (req, res) => {
-    res.render("register", { message: "" });
-  }
-);
+userRoute.get("/", isLogoutAuth, (req, res) => {
+  res.render("register", { message: "" });
+});
 userRoute.get(
   "https://employee-management-system-n26m.onrender.com/register",
   isLogoutAuth,
