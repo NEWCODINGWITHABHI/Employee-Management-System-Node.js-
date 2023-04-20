@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit User</h1>
+    <form action="/admin/edit-user" method="POST">
+         <label for="name">Name</label>
+      <br />
+      <input type="text" id="name" name="name" value="<%= user.name %>"  required/>
+      <br />
+      <br />
+      <label for="email" >Email</label>
+      <br />
+      <input type="text" id="email" name="email" value="<%= user.email %>" required/>
+      <br />
+      <br />
+    
+      <label for="mobileno" >Mob No</label>
+      <br />
+      <input type="text" id="mobileno" name="mobileno" value="<%= user.mobileno %>" required />
+      <br />
+      <br />
+      <label for="verify">Verified</label>
+      <input type="radio" name="verify" id="verify" value="1" <% if(user.isVerified==1){ %> checked <% } %> required>
+      <label for="verify">Unverified</label>
+      <input type="radio" name="verify" id="verify" value="0"  <% if(user.isVerified==0){ %> checked <% } %> required >
+      <br>
+      <br>
+      <input type="hidden" name="id" value="<%= user._id %>">
+      <input type="submit" value="Update User">
+    </form>
+    
+</body>
+</html>
