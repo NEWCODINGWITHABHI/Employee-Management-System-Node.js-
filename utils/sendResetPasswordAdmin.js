@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const dotenv=require("dotenv").config();
 async function sendResetPasswordAdmin(name, email, token) {
   console.log("sent mail");
   try {
@@ -9,7 +10,7 @@ async function sendResetPasswordAdmin(name, email, token) {
       requireTLS: true,
       auth: {
         user: "abhishekkumar01021995@gmail.com",
-        pass: "czldgichihcgwkqx",
+        pass:process.env.EMAIL_PASSWORD,
       },
     });
 

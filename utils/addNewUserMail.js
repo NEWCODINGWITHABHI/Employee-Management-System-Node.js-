@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const dotenv=require("dotenv").config();
 async function addNewUserMail(name, email,password, id) {
   try {
     const transporter = nodemailer.createTransport({
@@ -8,7 +9,7 @@ async function addNewUserMail(name, email,password, id) {
       requireTLS: true,
       auth: {
         user: "abhishekkumar01021995@gmail.com",
-        pass: "czldgichihcgwkqx",
+        pass:process.env.EMAIL_PASSWORD,
       },
     });
 

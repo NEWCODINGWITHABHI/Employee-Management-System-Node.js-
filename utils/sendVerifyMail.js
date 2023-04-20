@@ -1,5 +1,6 @@
 
 const nodemailer=require("nodemailer");
+const dotenv=require("dotenv").config();
 async function sendVerifyMail(name,email,id){
   
     try{
@@ -10,7 +11,7 @@ async function sendVerifyMail(name,email,id){
       requireTLS: true,
       auth: {
         user: "abhishekkumar01021995@gmail.com",
-        pass: "czldgichihcgwkqx",
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
 
