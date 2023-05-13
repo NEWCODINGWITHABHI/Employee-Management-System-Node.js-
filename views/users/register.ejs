@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <style>
+    <link rel="stylesheet" href="../../public/style.css">
+    <!-- <style>
       form {
         width: 60vw;
         height: 70vh;
@@ -22,39 +23,44 @@
       button {
         text-align: center;
       }
-    </style>
+    </style> -->
   </head>
   <body>
-    <form action="/register" method="post">
-      <label for="name">Name</label>
-      <br />
-      <input type="text" id="name" name="name" />
-      <br />
-      <br />
-      <label for="email">Email</label>
-      <br />
-      <input type="text" id="email" name="email" />
-      <br />
-      <br />
-      <label for="password">Password</label>
-      <br />
-      <input type="password" id="password" name="password" />
-      <br />
-      <br />
-      <label for="mobileno">Mob No</label>
-      <br />
-      <input type="text" id="mobileno" name="mobileno" />
-      <br />
-      <br />
-      <label for="image">Upload Image</label>
-      <br />
-      <input type="file" id="image" name="image" />
-      <br />
-      <br />
-      <% if(message){ %>
-      <p style="color: rgb(246, 10, 85)"><%= message %></p>
-      <% } %>
-      <button>Submit</button>
-    </form>
+    <div class="reg-page-container">
+      
+      <form class="reg-page" action="/register" method="post">
+        <label for="name">Name</label>
+        <br />
+        <input type="text" id="name" name="name" />
+        <br />
+        <br />
+        <label for="email">Email</label>
+        <br />
+        <input type="text" id="email" name="email" />
+        <br />
+        <br />
+        <label for="password">Password</label>
+        <br />
+        <input type="password" id="password" name="password" />
+        <br />
+        <br />
+        <label for="mobileno">Mob No</label>
+        <br />
+        <input type="text" id="mobileno" name="mobileno" />
+        <br />
+        <br />
+        <label for="image">Upload Image</label>
+        <br />
+        <input type="file" id="image" name="image" />
+        <br />
+        <br />
+        <% if(message){ %>
+        <p style="color: rgb(246, 10, 85)"><%= message %></p>
+        <% } %>
+        <div class="btn-div">
+          <button>Submit</button>
+        </div>
+      </form>
+    </div>
   </body>
 </html>

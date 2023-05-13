@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login </title>
-    <style>
+   <link rel="stylesheet" href="../../public/style.css">
+    <!-- <style>
              form {
         width: 60vw;
         height: 70vh;
@@ -22,10 +23,13 @@
       button{
         text-align: center;
       }
-    </style>
+    </style> -->
 </head>
 <body>
-    <form action="/login" method="post">
+  <div class="login-container">
+    <div class="form-wrapper">
+
+      <form class="login-page" action="/login" method="post">
         <label for="email">Email</label>
         <br>
         <input type="text" name="email">
@@ -36,14 +40,19 @@
         <input type="password" name="password">
         <br>
         <br>
-        <input type="submit" value="Login">
-    </form>
-    <br>
-    <br>
-    <a href="/forget">Forget Password</a>
-    <a href="/verification">Verification Mail</a>
-    <% if(message){ %>
-        <h3><%= message %></h3>
-    <% }  %>
-</body>
+        <div class="btn-div">
+          <button type="submit" value="Login">Login</button>
+        </div>
+      </form>
+      <div class="fgt-psw-cont">
+        <a href="/forget">Forget Password</a>
+        <a href="/verification">Verification Mail</a>
+        <% if(message){ %>
+          <h3><%= message %></h3>
+          <% }  %>
+        </div>
+    </div>
+  </div>
+ 
+      </body>
 </html>

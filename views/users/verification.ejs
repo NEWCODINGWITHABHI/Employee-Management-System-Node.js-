@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login </title>
+     <link rel="stylesheet" href="../../public/style.css">
     <style>
              form {
         width: 60vw;
@@ -25,20 +26,27 @@
     </style>
 </head>
 <body>
-    <h2>Verification Mail</h2>
-    <form method="post">
+  <div class="verify-main-cont">
+  <div class="verify-mail-cont">
+   
+    <div>
+    <form class="verify-form" method="post">
+      <h2>Verification Mail</h2>
         <label for="email">Email</label>
         <br>
         <input type="text" name="email">
         <br>
         <br>
         <input type="submit" value="Send mail">
-    </form>
-    <br>
-    <br>
-
-    <% if(message){ %>
+           <% if(message){ %>
         <h3><%= message %></h3>
     <% }  %>
+    </form>
+    </div>
+   
+
+ 
+    </div>
+    </div>
 </body>
 </html>

@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forget</title>
     <style>
-             form {
+      form {
         width: 60vw;
-        height: 70vh;
+        height: 30vh;
         margin: 15vh auto;
         padding: 2rem;
-        background-color: rgb(138, 225, 7);
+        background-color: aliceblue;
+        border: 5px solid rgb(197, 194, 194);
       }
-      input{
+      form label {
+        font-size: 2.5vw;
+      }
+      input {
         width: 80%;
         padding: 5px;
-        border: 5px ;
+        border: 5px;
         margin-top: 5px;
+        font-size: 2.5vw;
+        border: 1px solid grey;
+        color: white;
       }
-      button{
+      input[type="submit"] {
+        background-color: greenyellow;
+        color: black;
+        width: 81%;
+        cursor: pointer;
+      }
+      button {
         text-align: center;
       }
     </style>
-</head>
-<body>
-<form action="/admin/forget" method="POST">
-     <label htmlFor="email">Email</label>
-     <br />
-     <input type="text" name="email" />
-     <br />
-     <input type="submit" value="Send Link" />
-
-</form>
-<% if(message){ %>
+  </head>
+  <body>
+    <form action="/admin/forget" method="POST">
+      <label htmlFor="email">Email</label>
+      <br />
+      <input type="text" name="email" />
+      <br />
+      <br />
+      <input type="submit" value="Send Link" />
+    </form>
+    <% if(message){ %>
     <h3><%= message %></h3>
- <% } %>
-</body>
+    <% } %>
+  </body>
 </html>

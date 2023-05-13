@@ -5,12 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table thead{
+            display: inline-block;
+          
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        table thead th{
+           
+            margin-left: 20px !important;
+        }
+          table tbody{
+            display: block;
+            background-color: black;
+            color: aliceblue;
+        }
+        table th{
+            font-size: 30px;
+            margin: 20px;
+            padding: 20px;
+        }
+         table td{
+            font-size: 20px;
+            padding: 30px;
+            text-align: left;
+         }
+    </style>
 </head>
 <body>
     <h1>Welcome to Dashboard</h1>
      <h3><a href="/admin/add-new-user">Add New User</a></h3>
     <h2>Users Data</h2>
-    <table>
+    <table class="user-table-list">
         <thead>
             <th>Name</th>
             <th>Email</th>

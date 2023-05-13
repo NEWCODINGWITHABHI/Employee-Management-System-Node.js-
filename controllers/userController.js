@@ -19,8 +19,7 @@ async function userGetRegisterController(req, res) {
 
 async function userPostRegisterController(req, res) {
   const { name, email, mobileno, password, image } = req.body;
-  console.log(",,,,", req.body);
-
+  
   try {
     const hashP = await hashPassword(password);
     const user = new User({
@@ -31,19 +30,27 @@ async function userPostRegisterController(req, res) {
       image,
       isAdmin: 0,
     });
+    try {
+      const userData = await user.save();
 
-    const userData = await user.save();
-    if (userData) {
-      sendVerifyMail(name, email, userData._id);
-      res.render("register", {
-        message:
-          "Your registration has been successfully register , Please verify the mail",
-      });
-    } else {
-      res.render("register", { message: "Your registration has been failed" });
+      console.log("object", user);
+      console.log(",,,,", userData);
+      if (userData) {
+        sendVerifyMail(name, email, userData._id);
+        res.render("register", {
+          message:
+            "Your registration has been successfully register , Please verify the mail",
+        });
+      } else {
+        res.render("register", {
+          message: "Your registration has been failed",
+        });
+      }
+    } catch (error) {
+      res.json(error, "while save the data");
     }
   } catch (error) {
-    res.send(`database error${error}`);
+    res.json(`database error${error}`);
   }
 }
 

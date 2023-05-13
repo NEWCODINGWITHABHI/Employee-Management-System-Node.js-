@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forget </title>
-    <style>
+    <link rel="stylesheet" href="../../public/style.css">
+    <!-- <style>
              form {
         width: 60vw;
         height: 70vh;
@@ -22,10 +23,13 @@
       button{
         text-align: center;
       }
-    </style>
+    </style>  -->
 </head>
 <body>
-    <form action="/forget" method="post">
+ 
+<div class="forget-cont">
+  <div class="fgt-form-wrapper">
+    <form class="fgt-pwd-form" action="/forget" method="post">
         <label for="email">Email</label>
         <br>
         <input type="text" name="email">
@@ -34,8 +38,13 @@
         
         <input type="submit" value="Send Reset Link">
     </form>
+    <div class="fgt-res--text">
     <% if(message){ %>
         <h3><%= message %></h3>
     <% }  %>
+    </div>
+    </div>
+
+    </div>
 </body>
 </html>

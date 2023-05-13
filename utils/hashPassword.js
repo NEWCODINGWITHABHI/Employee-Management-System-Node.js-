@@ -2,7 +2,7 @@
 const bcrypt=require("bcrypt");
 async function hashPassword(password) {
   try {
-    const hashP = await bcrypt.hash(password, 10);
+    const hashP = await bcrypt.hash(password, 11);
 
     return hashP;
   } catch (error) {
